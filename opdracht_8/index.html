@@ -7,16 +7,13 @@
 </head>
 <body>
     
-    <h1 id="h1">Element</h1>
-
+    <h1 onclick="h1_click()" id="h1">Click on me!</h1>
 <script>
 
-    function kleur_aanpassen() {
-        document.getElementById("h1").style.color = "red";
-        document.getElementById("h1").textContent = "Inhoud aangepast!";
+    function h1_click() {
+        document.getElementById("h1").style.color = "green";
+        document.getElementById("h1").textContent = "U clicked!";
     }
-
-    kleur_aanpassen();
 
 </script>
 </body>

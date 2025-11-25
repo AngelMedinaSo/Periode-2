@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="h1">Hallo!</h1>
+    <button onclick="groet_ochtend()">Goedemorgen</button>
+    <button onclick="groet_middag()">Goedemiddag</button>
+    <button onclick="groet_avond()">Goedenavond</button>
+
+    <script>
+      function groet_ochtend() {
+        document.getElementById("h1").innerHTML = "Goedemorgen!";
+        document.body.style.backgroundColor = "lightyellow";
+        document.getElementById("h1").style.color = "black";
+      }
+
+      function groet_middag() {
+        document.getElementById("h1").innerHTML = "Goedemiddag!";
+        document.body.style.backgroundColor = "lightsalmon";
+        document.getElementById("h1").style.color = "black";
+      }
+
+      function groet_avond() {
+        document.getElementById("h1").innerHTML = "Goedenavond!";
+        document.body.style.backgroundColor = "darkblue";
+        document.getElementById("h1").style.color = "white";
+      }
+    </script>
+  </body>
+</html>

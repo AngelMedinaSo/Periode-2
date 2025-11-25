@@ -8,10 +8,21 @@
 <body>
     
     <h1 id="h1">Element</h1>
+    <button onclick="kleur_aanpassen()">Kleur aanpassen!</button>
+
+    <p onclick="p_click()" id="p">Click on me!</p>
 
 <script>
 
-    
+    function kleur_aanpassen() {
+        document.getElementById("h1").style.color = "red";
+        document.getElementById("h1").textContent = "Inhoud aangepast!";
+    }
+
+    function p_click() {
+        document.getElementById("p").style.color = "green";
+        document.getElementById("p").textContent = "U clicked!";
+    }
 
 </script>
 </body>

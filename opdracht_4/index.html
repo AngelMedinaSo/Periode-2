@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="paragraaf">paragraaf</p>
+
+    <script>
+
+        let jaar = prompt("Welke jaar ben je geboren?")
+
+        let leeftijd = 2025 - jaar;
+
+        document.getElementById("paragraaf").innerText = "Je bent ongeveer " + leeftijd + " jaar oud.";
+
+        console.log(jaar);
+        console.log(leeftijd)
+
+    </script>
+</body>
+</html>

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    <h1 id="h1">Element</h1>
+  </head>
+  <body>
+    <p id="p">Paragraaf</p>
+    <button onclick="verberg_tekst()">Verberg tekst</button>
+    <button onclick="toon_tekst()">Toon tekst</button>
 
-<script>
+    <script>
+      function verberg_tekst() {
+        document.getElementById("p").style.display = "none";
+      }
 
-    function kleur_aanpassen() {
-        document.getElementById("h1").style.color = "red";
-        document.getElementById("h1").textContent = "Inhoud aangepast!";
-    }
-
-    kleur_aanpassen();
-
-</script>
-</body>
+      function toon_tekst() {
+        document.getElementById("p").style.display = "block";
+        document.getElementById("p").style.backgroundColor = "yellow";
+      }
+    </script>
+  </body>
 </html>

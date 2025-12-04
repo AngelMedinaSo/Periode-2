@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="money()">
+    <h1>Your budget is 100</h1>
+    <h1 id="buy"></h1>
+
+    <script>
+      let product = prompt("Hoeveel kost het product dat je wilt kopen?");
+      const budget = 100;
+
+      product = Number(product);
+
+      function money() {
+        if (budget >= product) {
+          document.getElementById("buy").innerText = "You can Buy!!!";
+          document.getElementById("buy").style.color = "green";
+        } else {
+          document.getElementById("buy").innerText =
+            "You don't have enough money... GO WORK!!!";
+          document.getElementById("buy").style.color = "Red";
+        }
+      }
+    </script>
+  </body>
+</html>

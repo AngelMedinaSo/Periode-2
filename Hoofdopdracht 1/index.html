@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 id="titel">Good morning ☀️</h1>
+    <div>
+        <button id="darkBtn" onclick="darkMode()">Dark Mode</button>
+        <button id="lightBtn" onclick="lightMode()">Light Mode</button>
+    </div>
+
+    <script>
+      function lightMode() {
+        document.getElementById("titel").textContent = "Good morning ☀️";
+        document.getElementById("titel").style.color = "black";
+        document.body.style.backgroundColor = "white";
+        document.getElementById("lightBtn").style.backgroundColor = "white";
+        document.getElementById("lightBtn").style.color = "black";
+        document.getElementById("darkBtn").style.backgroundColor = "white";
+        document.getElementById("darkBtn").style.color = "black";
+        document.getElementById("darkBtn").style.borderColor = "black";
+        document.getElementById("lightBtn").style.borderColor = "black";
+
+      }
+      function darkMode() {
+        document.getElementById("titel").textContent = "Good Night 🌙";
+        document.getElementById("titel").style.color = "white";
+        document.body.style.backgroundColor = "black";
+        document.getElementById("darkBtn").style.backgroundColor = "black";
+        document.getElementById("darkBtn").style.color = "white";
+        document.getElementById("lightBtn").style.backgroundColor = "black";
+        document.getElementById("lightBtn").style.color = "white";
+        document.getElementById("darkBtn").style.borderColor = "white";
+        document.getElementById("lightBtn").style.borderColor = "white";
+      }
+    </script>
+  </body>
+</html>

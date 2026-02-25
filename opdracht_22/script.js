@@ -1,16 +1,33 @@
-const input = document.getElementById("naamInput");
-const button = document.getElementById("begroetBtn");
-const begroeting = document.getElementById("begroeting");
+let snacks = [];
+const input = document.getElementById("snackInput");
+const addBtn = document.getElementById("addBtn");
+const removeBtn = document.getElementById("removeBtn");
+const snackList = document.getElementById("snackList");
+const total = document.getElementById("total");
 
-button.addEventListener("click", function () {
-  const naam = input.value.trim();
+function updateList() {
+    snackList.innerHTML = "";
 
-  if (naam === "") {
-    begroeting.innerText = "Typ eerst je naam!";
-    begroeting.style.color = "red";
-  } else {
-    begroeting.innerText = `Hallo, ${naam}!`;
-    begroeting.style.color = "green";
-    input.value = "";
-  }
+    for (let snack of snacks) {
+        const li = document.createElement("li");
+        li.innerText = snack;
+        snackList.appendChild(li);
+    }
+
+    total.innerText = `Totaal aantal snacks: ${snacks.length}`;
+}
+
+addBtn.addEventListener("click", function() {
+    const snack = input.value.trim();
+    if (snack !== "") {
+        snacks.push(snack);
+        updateList();
+        input.value = "";
+        input.focus();
+    }
+});
+
+removeBtn.addEventListener("click", function() {
+    snacks.pop();
+    updateList();
 });

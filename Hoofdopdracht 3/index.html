@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="startScreen" class="screen active">
+        <h1>Fortune Teller</h1>
+        <input type="text" id="questionInput" placeholder="Stel een ja/nee vraag...">
+        <button id="askBtn">Ontdek je toekomst</button>
+        <p id="warning" class="hidden">Vul eerst een geldige vraag in!</p>
+    </div>
+
+    <div id="answerScreen" class="screen">
+        <h2>Jouw vraag:</h2>
+        <p id="questionOutput"></p>
+
+        <h2>Het antwoord:</h2>
+        <p id="answerOutput"></p>
+
+        <button id="backBtn">Opnieuw beginnen</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

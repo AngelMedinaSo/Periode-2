@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #202020;
+    color: white;
+}
+
+.screen {
+    display: none;
+    margin-top: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.screen.active {
+    display: block;
+    opacity: 1;
+}
+
+input {
+    padding: 5px;
+    width: 250px;
+    font-size: 16px;
+}
+
+button {
+    padding: 5px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.positive {
+    color: #00ac06;
+    font-weight: bold;
+}
+
+.negative {
+    color: #ff1100;
+    font-weight: bold;
+}
+
+.neutral {
+    color: #ffd000;
+    font-weight: bold;
+}

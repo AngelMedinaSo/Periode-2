@@ -1,0 +1,10 @@
+body {
+            transition: background-color 0.8s;
+            text-align: center;
+            font-family: sans-serif;
+            padding-top: 50px;
+        }
+        #kleur {
+            font-size: 24px;
+            margin-top: 20px;
+        }

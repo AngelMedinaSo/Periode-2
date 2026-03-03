@@ -1,52 +1,55 @@
-let timeLeft = 25 * 60;
-let timerId = null;
-let sessionsCompleted = 0;
+let hunger = 100;
+let energy = 100;
+let happiness = 100;
 
-const display = document.getElementById('timer-display');
-const message = document.getElementById('message');
-const sessionDisplay = document.getElementById('session-count');
+const hungerText = document.getElementById('hunger');
+const energyText = document.getElementById('energy');
+const happinessText = document.getElementById('happiness');
+const statusMessage = document.getElementById('statusMessage');
+const hungerBar = document.getElementById('hungerBar');
+const energyBar = document.getElementById('energyBar');
+const happinessBar = document.getElementById('happinessBar');
 
-function updateDisplay() {
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
+function updateStatus() {
+    hungerText.innerText = `Honger: ${hunger}`;
+    hungerBar.style.width = hunger + "%";
     
-    display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-}
-
-function startTimer() {
-    if (timerId !== null) return;
-
-    message.textContent = "Focus tijd!";
+    energyText.innerText = `Energie: ${energy}`;
+    energyBar.style.width = energy + "%";
     
-    timerId = setInterval(() => {
-        timeLeft--;
-        updateDisplay();
+    happinessText.innerText = `Geluk: ${happiness}`;
+    happinessBar.style.width = happiness + "%";
 
-        if (timeLeft <= 0) {
-            clearInterval(timerId);
-            timerId = null;
-            sessionsCompleted++;
-            sessionDisplay.textContent = `Sessies voltooid: ${sessionsCompleted}`;
-            message.textContent = "Lekker gewerkt! Tijd voor pauze.";
-            alert("Pomodoro voltooid!");
-        }
-    }, 1000);
+    if (hunger <= 0 && energy <= 0 && happiness <= 0) {
+        statusMessage.innerText = "Je Tamagotchi is dood!";
+        statusMessage.classList.add('dead');
+    } else {
+        statusMessage.innerText = "Je Tamagotchi is gelukkig!";
+        statusMessage.classList.remove('dead');
+    }
 }
 
-function pauseTimer() {
-    clearInterval(timerId);
-    timerId = null;
-    message.textContent = "Gepauzeerd";
-}
+document.getElementById('feed').addEventListener('click', () => {
+    hunger = Math.min(hunger + 20, 100);
+    updateStatus();
+});
 
-function resetTimer() {
-    pauseTimer();
-    timeLeft = 25 * 60;
-    updateDisplay();
-    message.textContent = "";
-}
+document.getElementById('sleep').addEventListener('click', () => {
+    energy = Math.min(energy + 20, 100);
+    updateStatus();
+});
 
-// Event Listeners
-document.getElementById('start-btn').addEventListener('click', startTimer);
-document.getElementById('pause-btn').addEventListener('click', pauseTimer);
-document.getElementById('reset-btn').addEventListener('click', resetTimer);
+document.getElementById('play').addEventListener('click', () => {
+    happiness = Math.min(happiness + 20, 100);
+    updateStatus();
+});
+
+setInterval(() => {
+    if (hunger > 0) hunger--;
+    if (energy > 0) energy--;
+    if (happiness > 0) happiness--;
+    
+    updateStatus();
+}, 1000);
+
+updateStatus();
